@@ -3,8 +3,10 @@
   background: url(first/base.svg);
   height: 630px;
   width: 750px;
-  /*    margin-left: -375px;
-        margin-top: -285px;*/
+  position: relative;
+  overflow: visible;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .xbox.white {
@@ -260,8 +262,34 @@
   margin-top: -315px;
 }
 
-.xbox {
-  background: no-repeat center;
+/*END Xbox One Controller Styling*/
+
+
+/* === Glowing Orbit Effect === */
+.controller.xbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;  /* slightly larger than controller */
+  height: 800px;
+  margin-left: -400px;
+  margin-top: -400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,150,0.8) 0%, rgba(0,255,150,0) 70%);
+  box-shadow: 0 0 30px 10px rgba(0,255,150,0.5);
+  animation: orbit-glow 6s linear infinite;
+  transform-origin: center center;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1; /* glow above base image, below buttons */
 }
 
-/*END Xbox One Controller Styling*/
+@keyframes orbit-glow {
+  0% {
+    transform: rotate(0deg) translateX(380px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(380px) rotate(-360deg);
+  }
+}
