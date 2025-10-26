@@ -58,18 +58,18 @@ body {
     height: 57px;
 } .ds4 .quadrant { 
     display: none; 
-} .ds4 .back /*, .ds4 .start*/ {
+} .ds4 .back, .ds4 .start {
     background: url(assets/ds4_dpad.png);
     width: 23px;
     height: 37px;
     margin-top: -8px;
     margin-left: 5px;
     opacity: 0;
-} /*.ds4 .start {
+} .ds4 .start {
     background-position: 23px 0;
     margin-right: 16px;
     float: right;
-}*/ .ds4 .dpad {
+} .ds4 .dpad {
 	width: 144px;
     height: 144px;
     left: 71px;
