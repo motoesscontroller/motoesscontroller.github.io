@@ -100,12 +100,6 @@ body {
 } .ds4 .trigger.right {
     background-position: -100px 0;
 	transform: rotateY(0);
-} .ds4 .touchpad {
-    width: 320px;
-    height: 167px;
-    position: absolute;
-    left: 237px;
-    top: 97px;
 } .ds4 .dpad {
     position: absolute;
     width: 125px;
