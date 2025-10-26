@@ -269,36 +269,30 @@
 /*END Xbox One Controller Styling*/
 
 
-/* === Animated Glow Beam Orbiting Around Controller === */
-.controller.xbox {
-  position: relative;
-  overflow: visible;
-}
-
-/* Glowing beam “snake” circling around the controller */
+/* === Glowing Beam Orbiting ON TOP of Controller === */
 .controller.xbox::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;              /* matches controller size */
+  width: 100%;
   height: 100%;
-  border-radius: 50%;       /* circular path */
+  border-radius: 50%;
   transform-origin: center center;
   pointer-events: none;
-  z-index: -1;              /* glow behind controller */
+  z-index: 9999; /* on top of controller */
   background: conic-gradient(
     from 0deg,
     rgba(0, 255, 150, 0) 0deg,
-    rgba(0, 255, 150, 0.9) 15deg,
-    rgba(0, 255, 150, 0) 45deg,
+    rgba(0, 255, 150, 1) 10deg,
+    rgba(0, 255, 150, 0) 30deg,
     rgba(0, 255, 150, 0) 360deg
   );
-  filter: blur(8px);
+  filter: blur(12px) brightness(2);
   animation: rotate-beam 4s linear infinite;
 }
 
-/* Smooth circular rotation */
+/* Smooth rotation animation */
 @keyframes rotate-beam {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
